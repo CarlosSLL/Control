@@ -1,0 +1,109 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+.modal{
+    position: fixed;
+    background-color: v.$blanco;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.425);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99990;
+}
+#modal-privacidad {
+    display: none;
+}
+.modal-contenido{
+    background-color: v.$blanco;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 700px;
+}
+
+.small{
+    width: 400px;
+}
+.titulo-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    gap: 1.5rem;
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 1rem;
+         transition: all 0.2s ease;
+        &:hover{
+            padding: 1rem;
+            background-color: v.$gris_claro;
+
+            svg{
+                color: v.$rojo;
+                font-size: 2rem;
+            }
+            transition: all 0.2s ease-in-out;
+        }
+
+    }
+}
+.contenedor-dropdown{
+    position: relative;
+    // display: inline-block;
+}
+.dropdown{
+    position: absolute;
+    top: calc(100% + 5px); /* Debajo del botón */
+    right: 0;              /* Alineado con el botón */
+    width: 160px;
+
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / .15);
+    z-index: 1000;
+}
+
+.dropdown button, a{
+    display: flex;
+    width:100%;
+    padding:12px;
+    border:none;
+    background:none;
+    text-align:left;
+    cursor:pointer;
+    gap: .5rem;
+    align-items: center;
+}
+
+.dropdown button:hover{
+    background:#f5f5f5;
+}
+
+.dropdown a:hover{
+    background:#f5f5f5;
+}
+
+.display-flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.swal2-container {
+    z-index: 100000 !important;
+}
+
+.error-message{
+    @include m.badge(v.$rosa_claro, v.$rojo);
+    padding: 1rem;
+    font-weight: 600;
+}
+.succes-message{
+     @include m.badge(v.$verde_menta, v.$verde_esmeralda);
+    padding: 1rem;
+    font-weight: 600;
+}

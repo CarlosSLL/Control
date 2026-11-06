@@ -1,0 +1,58 @@
+@use '../base/variables' as v;
+.contenido-loging{
+    display: flex;
+    height: 100vh;
+    background-color: v.$blanco;
+}
+.contenido-informacion-loging{
+    background:linear-gradient(
+        132deg, v.$azul_oscuro 10%,
+        v.$azul 100%
+    );
+    width: 100%;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        // display: flex;
+        font-size: 40px;
+        color: v.$blanco;
+        text-align: center;
+    }
+    p{
+        color: v.$blanco;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .imagen-logo{
+        // margin-top: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        width: 120px;
+        height: 120px;
+        border-radius: 2rem;
+        svg{
+            color: v.$azul;
+        }
+
+    }
+    .decoracion-icono{
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        svg{
+            color: v.$blanco;
+             width: 6rem;
+            height: 6rem;
+
+        }
+    }
+}
+

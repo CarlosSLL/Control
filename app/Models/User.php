@@ -19,7 +19,11 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'nombres',
+        'apellidos',
+        'rol_id',
+        'estado',
+        'foto_path',
         'email',
         'password',
     ];
@@ -46,4 +50,37 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function rol(){
+        return $this->belongsTo(Rol::class, 'rol_id');
+    }
+    public function esAdministrativo(): bool
+{
+    return in_array($this->rol?->tipo_rol, ['Administrador', 'Gestor de almacén'], true);
+}
+
+    public function obras(){
+         return $this->hasMany(Obra::class, 'id_usuario');
+    }
+    public function proyectoTrabajador(){
+        return $this->hasMany(ProyectoTrabajador::class, 'trabajador_id');
+    }
+
+    public function obraActiva(): ?\App\Models\Obra
+{
+    $comoLider = \App\Models\Obra::where('id_usuario', $this->id)
+        ->where('estado', 'En progreso')
+        ->first();
+
+    if ($comoLider) {
+        return $comoLider;
+    }
+
+    return \App\Models\Obra::where('estado', 'En progreso')
+        ->whereHas('proyectoTrabajador', function ($query) {
+            $query->where('trabajador_id', $this->id)
+                  ->whereNull('fecha_salida');
+        })
+        ->first();
+}
 }

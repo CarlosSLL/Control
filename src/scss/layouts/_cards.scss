@@ -1,0 +1,74 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+ .contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+     margin: 2rem 2rem;
+ }
+ .grid-2{
+    grid-template-columns: repeat(2, 1fr);
+ }
+ .grid-3{
+    grid-template-columns: repeat(3, 1fr);
+ }
+
+ .card{
+    background: v.$blanco;
+    border-radius: 1rem;
+    padding: 1.5rem;
+     box-shadow: 0 0 8px rgba(36, 96, 226, 0.2);
+
+ }
+
+.titulo-material{
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.imagen-card{
+    // background-color: v.$color_fondo;
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    svg,img{
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+.proyecto-ubicacion,
+.proyecto-estado{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: v.$gris_azulado;
+
+    svg{
+        height: 1.6rem;
+        width: 1.6rem;
+    }
+}
+.barra-progreso{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input{
+        width: 90%;
+    }
+}
+.fecha-card{
+    padding: 0 1.5rem 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    p{
+        @include m.badge(v.$gris_mas_claro, v.$negro);
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+

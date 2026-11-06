@@ -1,0 +1,105 @@
+@use '../base/variables' as v;
+
+header{
+    top: 0;
+    left: 0;
+    display:flex;
+    flex-direction: row;
+    margin: 0;
+    align-items: center ;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: .5rem;
+    border-bottom: 1px solid v.$gris_claro;
+     position: fixed;
+     z-index: 1000;
+     width: 100%;
+     background-color: v.$blanco;
+}
+.titulo-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 40rem;
+    h1{
+        color: v.$azul_oscuro;
+        font-weight: 600;
+    }
+}
+.icono-header-menu{
+    margin-left: 1rem;
+}
+.icono-header-titulo{
+    background-color: v.$azul;
+    color: v.$blanco;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+.seccion-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    border-left: 1px solid v.$gris_claro;
+    margin-right: 2rem;
+
+    img{
+    color: v.$blanco;
+    border-radius: 5rem;
+    height: 37px;
+    width: 37px;
+    margin-left: 2rem;
+    }
+
+}
+.icono-heade-user{
+    background-color: v.$azul;
+    color: v.$blanco;
+    border-radius: 5rem;
+    height: 37px;
+    width: 37px;
+    padding: .7rem;
+    margin-left: 2rem;
+}
+.header-buscador{
+    // border: 1px solid v.$gris_claro;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: .4rem;
+      width: 100%;
+
+    input{
+        padding: .6rem;
+        font-size: 1.5rem;
+        align-self: center;
+        width: 96%;
+    }
+
+    svg{
+        color: v.$gris_claro;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+
+.page-header{
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    padding: .5rem 2rem;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    svg{
+        height: 3.5rem;
+        width: 3.5rem;
+        color: v.$azul;
+    }
+}

@@ -1,0 +1,28 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.p-Administrador-p,
+.estado-activo,
+.estado-completada,
+.estado-finalizado{
+            @include m.badge(v.$verde_menta, v.$verde_esmeralda);
+        }
+
+        .estado-inactivo,
+        .estado-cancelada,
+        .estado-cancelado{
+            @include m.badge(v.$rosa_claro, v.$rojo);
+        }
+        .p-Gestor.de.almacén-p,
+        .p-Trabajador-p,
+         .estado-borrador,
+         .estado-pendiente,
+        .estado-en-progreso{
+            @include m.badge(v.$lila_claro, v.$azul_oscuro);
+        }
+        .p-Director.de.proyectos-p,
+        .p-Líder.de.proyecto-p,
+        .estado-en-pausa,
+        .estado-pendiente{
+            @include m.badge(v.$lila_claro, v.$azul);
+        }

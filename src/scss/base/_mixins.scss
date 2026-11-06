@@ -1,0 +1,32 @@
+@use 'variables' as v;
+@use "sass:color";
+
+@mixin boton($bgcolor, $display){
+    display: $display;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgcolor;
+    color: v.$blanco;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    padding: 1.3rem 3rem;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    transition: all .3s ;
+    // margin-top: 2rem;
+     &:hover{
+        background-color: color.adjust($bgcolor, $lightness: -15%);
+        cursor: pointer;
+    }
+}
+
+@mixin badge($bgcolor, $color){
+    display: inline-block;
+    color: $color;
+    padding: 4px;
+    border-radius: 3rem;
+    font-weight: 500;
+    background-color: $bgcolor;
+}

@@ -1,0 +1,42 @@
+@use 'variables' as v;
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: v.$fuente_principal;
+    background-color: v.$color_fondo;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+h1,p,label{
+     font-variation-settings:
+    "wdth" 110;
+}
+
+a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.4rem;
+    color: v.$azul;
+    font-weight: 600;
+}
+input{
+     outline: none;
+     border: none;
+}
+
+.items-right{
+    justify-content: flex-end;
+    padding: 0 2rem 0 0;
+}
+.items-center{
+    justify-content: center;
+}

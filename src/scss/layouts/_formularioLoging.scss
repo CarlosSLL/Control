@@ -1,0 +1,61 @@
+@use '../base/variables' as v;
+
+.formulario-login{
+    display :flex;
+    flex-direction: column;
+    // align-items: center;
+     justify-content: center;
+    padding: 3.5rem;
+    width: 100%;
+    h1{
+        font-size: 4rem;
+        // margin-top: 14rem;
+        margin-bottom: .1rem;
+        color: v.$azul_oscuro;
+    }
+    p{
+        font-size: 1.7rem;
+        color: v.$azul_oscuro;
+        font-weight: 300;
+    }
+
+    label{
+        color: v.$azul_oscuro;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    .campo-formulario{
+        border: 2px solid v.$gris_claro;
+        padding: .3rem;
+        border-radius: 1rem;
+        margin: .6rem 0 2rem 0;
+        display: flex;
+        align-items: center;
+            &:focus-within {
+        border-color: #2460e2;
+        box-shadow: 0 0 8px rgba(36, 96, 226, 0.2);
+    }
+
+
+        svg{
+            color: v.$gris_claro;
+            margin-left: .5rem;
+            font-weight: 500;
+        }
+
+         input{
+            padding: 1rem;
+            width: 100%;
+            font-size: 1.7rem;
+
+    }
+    }
+    .enlace-login{
+        text-align: right;
+    }
+
+    .ojo-password{
+        margin-right: 1rem;
+    }
+
+}

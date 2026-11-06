@@ -1,0 +1,41 @@
+@use '../base/variables' as v;
+
+.menu-vertical {
+    width: v.$tamaño_menu;
+    height: 100vh;
+     top: 0;
+    left: 0;
+    // box-shadow: 0 0 8px rgba(36, 96, 226, 0.2);
+    border-right: 1px solid v.$gris_claro;
+    background-color: v.$blanco;
+    position: fixed;
+
+}
+
+.opciones{
+    margin-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    // text-align: center;
+    padding: 1rem;
+
+    a{
+        display: flex;
+        padding: 1rem;
+        align-items: center;
+        border-radius: 1rem;
+        gap: 1rem;
+        color: v.$azul_oscuro;
+        transition: all .3s;
+        &:hover{
+            background-color: v.$gris_claro;
+        }
+    }
+}
+
+.menu-vertical .opciones a.activo {
+    background-color: rgba(0, 0, 0, 0.08); /* Fondo sombreado */
+    box-shadow: inset 2px 0 0 #3b82f6;      /* Borde/indicador lateral (opcional) */
+    font-weight: 600;
+}

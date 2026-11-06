@@ -1,0 +1,115 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+.contenido{
+    margin-left: v.$margen_contenido;
+    margin-top: 6rem;
+    padding: .5rem;
+}
+
+.contenido-principal{
+    width: 100%;
+    display: flex;
+    // justify-content: center;
+    margin-top: 1.5rem;
+
+}
+
+.tabla {
+    width: 96.5%;
+    border-collapse: collapse;
+    background-color: v.$blanco;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px rgba(36, 96, 226, 0.2);
+
+    thead {
+        background-color: v.$gris_mas_claro;
+        text-align: left;
+    }
+
+    thead th:first-child {
+        border-top-left-radius: 1rem;
+    }
+
+    thead th:last-child {
+        border-top-right-radius: 1rem;
+    }
+
+    tr {
+        border-bottom: 1px solid v.$gris_claro;
+    }
+
+    td{
+        color: v.$negro;
+        padding: 0 1rem;
+        font-size: 1.3rem;
+
+    }
+    th {
+        padding: 1rem;
+        color: v.$azul_oscuro;
+        font-size: 1.3rem;
+    }
+
+    th
+
+    tbody tr:last-child {
+        border-bottom: none;
+    }
+    .tabla_bacia{
+        text-align: center;
+        color: v.$azul_oscuro;
+        padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .acciones{
+        display: flex;
+        align-items: center;
+
+        .boton-blanco-flex{
+            border: none;
+            margin: 0;
+
+        }
+    }
+    .nombres{
+        display: flex;
+        gap:1rem;
+        font-weight: 500;
+        align-items: center;
+        img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 5rem;
+            margin-top: 1rem;
+        }
+        svg{
+            width: 4rem;
+            height: 4rem;
+            color: v.$gris_azulado;
+            background-color: v.$verde_menta;
+            border-radius: 4rem;
+            padding: 5px;
+            margin-top: 1rem;
+        }
+
+    }
+
+     .contacto{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+            svg{
+                width: 1.5rem;
+                height: 1.5rem;
+                color: v.$gris_azulado;
+            }
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+        }
+        
+
+
+
+}

@@ -1,0 +1,40 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.boton-azul{
+    @include m.boton(v.$azul, block);
+    width: 100%;
+}
+.boton-azul-flex{
+    @include m.boton(v.$azul, flex);
+    // width: 100%;
+}
+.boton-azul-inline-block{
+    @include m.boton(v.$azul, inline-block);
+    width: 100%;
+}
+.boton-azul-oscuro-block{
+    @include m.boton(v.$azul_oscuro, block);
+    text-align: center;
+    a{
+        color: v.$blanco;
+    }
+}
+.boton-azul-oscuro{
+    @include m.boton(v.$azul_oscuro, inline-block)
+}
+.boton-blanco-flex{
+    @include m.boton(v.$blanco,flex);
+    border: 1px solid v.$gris_claro;
+    color: v.$negro;
+}
+.boton-editar{
+    @include m.boton(v.$blanco,flex);
+    color: v.$verde_esmeralda;
+    margin: 0;
+}
+.boton-eliminar{
+    @include m.boton(v.$rosa_claro, flex);
+    color: v.$rojo;
+    margin: 0;
+}
