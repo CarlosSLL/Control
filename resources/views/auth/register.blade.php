@@ -49,4 +49,7 @@
             </x-primary-button>
         </div>
     </form>
+    @if (filled(config('services.google.client_id')) && filled(config('services.google.client_secret')) && filled(config('services.google.redirect')))
+        <p><a href="{{ route('google.redirect') }}">Registrarme con Google</a></p>
+    @endif
 </x-guest-layout>

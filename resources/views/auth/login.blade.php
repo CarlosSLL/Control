@@ -30,6 +30,15 @@
 
             <input class="boton-azul" type="submit" value="Iniciar Sesion">
         </form>
+
+        <x-auth-session-status class="mt-4" :status="session('status')" />
+        @error('google')
+            <p role="alert">{{ $message }}</p>
+        @enderror
+
+        @if (filled(config('services.google.client_id')) && filled(config('services.google.client_secret')) && filled(config('services.google.redirect')))
+            <p><a href="{{ route('google.redirect') }}">Continuar con Google</a></p>
+        @endif
     </div>
 
 
